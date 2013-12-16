@@ -1,15 +1,17 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Upcoming Events</h3>
+    <h3 class="panel-title"><%=@event.title%></h3>
   </div>
+
+
   <div class="panel-body">
-    <p>Date:</p>
-    <p>Time:</p>
-    <p> Location:</p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, at delectus esse in nemo non quas vel. Adipisci autem dicta eius libero molestias nemo odio praesentium qui, quia similique temporibus?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid assumenda at deleniti dolore eveniet fugiat ipsam iste magnam minus molestias, nemo numquam perspiciatis quae, quidem sit soluta totam vero?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias eaque explicabo, ipsam laudantium molestiae odio tempora. Architecto doloremque et harum impedit ipsum, laborum neque officiis optio quia ratione ullam vitae!
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi aspernatur commodi cumque dolor exercitationem illo incidunt iusto maxime minima nemo nihil perferendis quam quia quos repellat, repellendus sunt vitae?
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt enim facilis numquam recusandae. Commodi debitis dignissimos dolorum eum illum laborum totam. Commodi doloremque impedit itaque possimus, provident reprehenderit vero?
+    <p><%= event.date %></p>
+
+    <p><%= event.time %>
+
+    <p><%= event.location %>
+
+    <p><%= truncate(event.description, length: 300) %>
+      <%= link_to 'See more details', event_path(@event) %></p>
   </div>
-</div>
+  <% end %>
