@@ -2,6 +2,8 @@
 <p><%= @event.date %></p>
 <p><%= @event.time %></p>
 <p><%= @event.location %></p>
+<h3> <%= button_to "RSVP", rsvps_path(event_id: @event.id), method: :post, class:"btn btn-primary" %></h3>
 <p><%= @event.description %>
-  <%= link_to 'Events Calendar', events_path %></p>
+
+<h6><%= link_to "Back to Event's Calendar", rsvps_path, method: :get  %></h6>
 </div>
