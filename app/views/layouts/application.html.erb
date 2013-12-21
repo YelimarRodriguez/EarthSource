@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PlantsIdApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>EarthSource App</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Yelimar Rodriguez">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body>
-
- <%if notice %>
- <p class="notice"><%= notice %></p>
- <% end %>
- <%if alert %>
- <p class="alert"><%= alert %></p>
-<% end %>
- <div>
-
-  <% if user_signed_in? %>
-  Welcome, <%= current_user.email %>! <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "Sign Up", new_user_registration_path %>    <%= link_to "Sign in", new_user_session_path %>
-
-</div>
-<% end %>
+<body class="<%= controller.controller_name %>">
 
 <div class="container">
-<%= yield %>
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><%= link_to "home", root_path %></li>
+      <li><%= link_to "Sign In", new_user_session_path %></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <%= link_to root_path do %>
+        <h3 class="text-muted">EarthSource</h3>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <% if notice %>
+      <p class="notice"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+      <p class="alert"><%= alert %></p>
+  <% end %>
+
+  <% if user_signed_in? %>
+      Welcome, <%= current_user.email %>! <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %>    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
+<div class="container">
+  <%= yield %>
 </div>
 </body>
 </html>

@@ -38,6 +38,8 @@ gem 'devise', '~> 3.2.2'
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
 end
 
 # Use ActiveModel has_secure_password

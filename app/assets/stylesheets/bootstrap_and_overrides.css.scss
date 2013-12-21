@@ -1,12 +1,18 @@
+$brand-primary: #FF530D;
 
-$brand-primary: red;
-$link-color: #0000EE;
 @import "bootstrap";
 
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* Make nav pills round and cute */
+.nav-pills > li > a {
+  @include border-top-radius(20px);
+  @include border-bottom-radius(20px);
+  @include box-shadow(10px 10px 5px rgb(100, 134, 31));
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

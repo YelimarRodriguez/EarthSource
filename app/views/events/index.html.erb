@@ -1,20 +1,22 @@
+
 <% @events.each do |event| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%=event.title%></h3>
+    <div class="panel panel-warning">
+      <div class="panel-heading test">
+        <h3 class="panel-title"><%= event.title %></h3>
       </div>
 
 
-    <div class="panel-body">
-      <p><%= event.date %></p>
+      <div class="panel-body">
+        <p><%= event.date %></p>
 
-      <p><%= event.time %>
+        <p><%= event.time %>
 
-      <p><%= event.location %>
+        <p><%= event.location %>
 
-      <p><%= truncate(event.description, length: 300) %>
-        <%= link_to 'See more details', event %></p>
-    </div>
+        <p><%= truncate(event.description, length: 300) %>
+          <%= link_to 'See more details', event %></p>
+      </div>
+      </div>
 <% end %>
 
 
