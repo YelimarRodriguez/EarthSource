@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     @event = Event.create safe_event
 
     if @event.save
-      flash[:notice] = "Event saved successfully"
+      flash[:notice] = "Your event saved successfully"
       redirect_to @event
     else
       render 'new'
