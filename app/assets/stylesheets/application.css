@@ -12,3 +12,8 @@
  *= require bootstrap_and_overrides
  *= require_tree .
  */
+  .welcome-message {
+      font-weight: bold;
+      color: yellow;
+
+}

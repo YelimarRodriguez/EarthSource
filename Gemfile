@@ -43,6 +43,7 @@ group :development do
 end
 
 gem 'jquery-turbolinks'
+gem "carrierwave", "~> 0.9.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

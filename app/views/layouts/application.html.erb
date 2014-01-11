@@ -46,7 +46,7 @@
   <% end %>
 
   <% if user_signed_in? %>
-      Welcome, <%= current_user.email %>! <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+     <p class="welcome-message">  Welcome, <%= current_user.email %>! <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
   <% else %>
       <%= render 'layouts/sign_up' %>
   <% end %>
