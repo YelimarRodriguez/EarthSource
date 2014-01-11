@@ -25,7 +25,7 @@
       <li class="active"><%= link_to "Home", root_path%></li>
       <li><%= link_to "Event Calendar", events_path %></li>
       <% if user_signed_in? %>
-          <li><%= link_to "Profile", profile_path %></li>
+          <li><%= link_to "Profile" %></li>
       <% else %>
           <li><%= link_to "Sign up", new_user_registration_path, class: "sign-up-toggle" %></li>
       <% end %>
