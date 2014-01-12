@@ -22,17 +22,17 @@
 <div class="container">
   <div class="header">
     <ul class="nav nav-pills pull-right">
-      <li class="active"><%= link_to "Home", root_path%></li>
+      <li> <%= link_to "Home", root_path %></li>
       <li><%= link_to "Event Calendar", events_path %></li>
       <% if user_signed_in? %>
-          <li><%= link_to "Profile" %></li>
+          <li><%= link_to "Profile", edit_profile_path %></li>
       <% else %>
           <li><%= link_to "Sign up", new_user_registration_path, class: "sign-up-toggle" %></li>
       <% end %>
     </ul>
     <%= link_to root_path do %>
         <h3 class="text-muted">EarthSource</h3>
-        <!--<p> test right log in log out links here </p>-->
+        <p><%= link_to "Log in", new_user_session_path %></p>
     <% end %>
   </div>
 </div>

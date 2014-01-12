@@ -1,0 +1,8 @@
+<h1 class="profile-header"><%= @user.name %></h1>
+<h3> Bio: </h3>
+<h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium autem culpa debitis dicta dolore, eius fugiat
+  minus modi nobis, non perferendis placeat quia, quis rem temporibus unde voluptatum! Officia, vitae.</h4>
+
+<% if @user == current_user %>
+    <p><%= link_to "Edit Profile", edit_profile_path(current_user) %></p>
+<% end %>

@@ -1,4 +1,3 @@
-
 <% @events.each do |event| %>
     <div class="panel panel-warning">
       <div class="panel-heading test">
@@ -7,17 +6,15 @@
 
 
       <div class="panel-body event">
-        <p><%= event.date %></p>
+        <p><%= event.date.strftime("%B %d, %Y") %></p>
 
-        <p><%= event.time %>
+        <p><%= event.time.strftime("%I:%M %P") %></p>
 
-        <p><%= event.location %>
+        <p><%= event.location %></p>
 
         <p><%= truncate(event.description, length: 300) %>
           <%= link_to 'See more details', event %></p>
       </div>
-      </div>
+    </div>
+
 <% end %>
-
-
-<!--time.to_formatted_s(:long_ordinal)-->
