@@ -44,6 +44,7 @@ end
 
 gem 'jquery-turbolinks'
 gem "carrierwave", "~> 0.9.0"
+gem "fog", "~> 1.3.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

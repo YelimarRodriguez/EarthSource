@@ -9,8 +9,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    user = current_user
-    redirect_to profile_path
+
   end
 
   def update
