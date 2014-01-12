@@ -1,5 +1,6 @@
 
 <h1><%= @event.title %></h1>
+<%= image_tag @event.user.pic %>
 <p><%= @event.date.strftime("%B %d, %Y") %></p>
 <p><%= @event.time.strftime("%I:%M %P") %></p>
 <p><%= @event.location %></p>

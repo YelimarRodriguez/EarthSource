@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -40,11 +39,18 @@ group :development do
   gem "binding_of_caller"
   gem "guard-livereload", require: false
   gem "rack-livereload"
+  gem 'sqlite3'
 end
 
 gem 'jquery-turbolinks'
 gem "carrierwave", "~> 0.9.0"
 gem "fog", "~> 1.3.1"
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
