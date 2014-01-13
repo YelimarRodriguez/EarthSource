@@ -1,13 +1,22 @@
+<div class="foreground">
+  <%= button_to "Add An Event", new_event_path, method: :get, class: "btn btn-primary pull-right" %></a></p>
+  <h1><%= @event.title %></h1>
 
-<h1><%= @event.title %></h1>
-<%= image_tag @event.user.pic %>
-<p><%= @event.date.strftime("%B %d, %Y") %></p>
-<p><%= @event.time.strftime("%I:%M %P") %></p>
-<p><%= @event.location %></p>
-<h3> <%= button_to "RSVP", rsvps_path(event_id: @event.id), method: :post, class:"btn btn-primary" %></h3>
-<p><%= @event.description %>
+  <h2>Total RSVPS: <%= @event.rsvps.count %></h2>
 
-<%= button_to "Add An Event", new_event_path, method: :get %></a></p>
+  <h2>Hosted by: <%= @event.user.name %></h2>
+  <%= image_tag @event.user.pic.thumb, class: 'rounded-profile-pic pull-right' %>
+  <p><%= @event.date.strftime("%B %d, %Y") %></p>
 
-<h6><%= link_to "Back to Event's Calendar", rsvps_path, method: :get  %></h6>
+  <p><%= @event.time.strftime("%I:%M %P") %></p>
+
+  <p><%= @event.location %></p>
+
+  <p><%= @event.description %>
+  <h3> <%= button_to "RSVP", rsvps_path(event_id: @event.id), method: :post, class: "btn btn-primary" %></h3>
+
+
+  <h6><%= link_to "Back to Event's Calendar", rsvps_path, method: :get %></h6>
+</div>
+
 </div>

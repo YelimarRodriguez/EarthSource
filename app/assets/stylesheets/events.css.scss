@@ -4,5 +4,12 @@
 
 #events {
   background-image: url(asset_path('Hometron_Image.JPG'));
-
+  .event-profile{
+    position: relative;
+    .leader{
+      position: absolute;
+      top: 100px;
+      right: 29px;
+    }
+  }
  }

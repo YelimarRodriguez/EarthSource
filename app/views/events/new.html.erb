@@ -1,4 +1,4 @@
-<h1>Add a New Event</h1>
+<div class="foreground"><h1>Add a New Event</h1>
 
 <%= form_for @event, html: {class: "form-horizontal"} do |f| %>
     <% if @event.errors.any? %>
@@ -16,7 +16,7 @@
     <h4><%= f.label :date %></h4>
     <p><%= f.date_select :date%></p>
     <h4><%= f.label :time %></h4>
-    <p><%= f.time_select :time %></p>
+    <p><%= f.time_select :time, ampm: true %></p>
     <h4><%= f.label :location %></h4>
     <p><%= f.text_field :location, class: "form-control" %>
     <h4><%= f.label :title %></h4>
@@ -30,3 +30,4 @@
 <%= link_to 'Back to Events', events_path %>
 
 
+</div>

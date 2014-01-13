@@ -1,7 +1,20 @@
-<%= image_tag @user.pic %>
-<h1 class="profile-header"><%= @user.name %></h1>
-<h3> Bio: </h3>
+<%= image_tag(@user.pic.thumb, {class: 'rounded-profile-pic pull-right'}) %>
+<h1 class="profile-header">
+  <%= @user.name %>
+</h1>
+<h3>Bio:</h3>
 <h4> <%= @user.bio %></h4>
+
+<h2>Hosted events</h2>
+<% @user.events.each do |event| %>
+    <p><%= link_to event.title, event %></p>
+<% end %>
+
 <% if @user == current_user %>
+    <h2>Your RSVPS</h2>
+    <% @user.rsvps.each do |rsvp| %>
+        <%= link_to rsvp.event.title, rsvp.event %>
+    <% end %>
+
     <p><%= link_to "Edit Profile", edit_profile_path %></p>
 <% end %>

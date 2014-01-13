@@ -22,42 +22,45 @@
 <div class="container">
   <div class="header">
     <ul class="nav nav-pills pull-right">
-      <li> <%= link_to "Home", root_path %></li>
-      <li><%= link_to "Event Calendar", events_path %></li>
+      <li class="active"> <%= link_to "Home", root_path %></li>
+      <li class="active"><%= link_to "Event Calendar", events_path %></li>
       <% if user_signed_in? %>
-          <li><%= link_to "Profile", edit_profile_path %></li>
+          <li class="active"><%= link_to "Profile", profile_path %></li>
+          <li class="active"><%= link_to "Add Event", new_event_path %></li>
       <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "sign-up-toggle" %></li>
+          <li class="active"><%= link_to "Sign up", new_user_registration_path, class: "sign-up-toggle" %></li>
       <% end %>
     </ul>
     <%= link_to root_path do %>
         <h3 class="text-muted">EarthSource</h3>
-        <p><%= link_to "Log in", new_user_session_path %></p>
     <% end %>
-  </div>
-</div>
+        <% if !user_signed_in? %>
+            <p><%=link_to "Log in", new_user_session_path %></p>
+        <% end %>
 
-<div class="container">
-  <% if notice %>
-      <p class="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-      <p class="alert"><%= alert %></p>
-  <% end %>
+        </div>
+        </div>
 
-  <% if user_signed_in? %>
-     <p class="welcome-message">  Welcome, <%= current_user.email %>! <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-  <% else %>
-      <%= render 'layouts/sign_up' %>
-  <% end %>
+        <div class="container">
+          <% if notice %>
+              <p class="notice"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+              <p class="alert"><%= alert %></p>
+          <% end %>
+
+          <% if user_signed_in? %>
+              <p class="welcome-message"> Welcome, <%= current_user.email %>
+                 <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+          <% else %>
+              <%= render 'layouts/sign_up' %>
+          <% end %>
 
 
-</div>
+        </div>
 
 
-<div class="container">
-  <%= yield %>
-</div>
+        <div class="container">
+          <%= yield %>
+        </div>
 
-</body>
-</html>

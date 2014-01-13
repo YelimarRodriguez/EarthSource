@@ -45,6 +45,7 @@ end
 gem 'jquery-turbolinks'
 gem "carrierwave", "~> 0.9.0"
 gem "fog", "~> 1.3.1"
+gem "mini_magick"
 
 group :production do
   gem 'rails_12factor'

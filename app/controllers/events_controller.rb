@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
     @events = Event.all
@@ -13,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create safe_event
+    @event = current_user.events.new safe_event
 
     if @event.save
       flash[:notice] = "Your event saved successfully"

@@ -1,10 +1,10 @@
 <h1>Edit Your Profile!</h1>
 <%= form_for current_user, url: profile_path, :html => {:multipart => true} do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :bio %>
-    <%= f.text_field :bio %>
-    <%= f.file_field :pic %>
-    <%= f.hidden_field :pic_cache %>
-    <%= f.submit %>
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+    <p><%= f.label :bio %></p>
+    <p><%= f.text_field :bio %></p>
+    <p><%= f.file_field :pic %></p>
+    <p><%= f.hidden_field :pic_cache %></p>
+    <p><%= f.submit %></p>
 <% end %>
