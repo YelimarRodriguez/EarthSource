@@ -1,11 +1,12 @@
 <div class="foreground">
-  <%= button_to "Add An Event", new_event_path, method: :get, class: "btn btn-primary pull-right" %></a></p>
+  <%= button_to "Add An Event", new_event_path, method: :get, class: "btn btn-primary pull-right" %>
   <h1><%= @event.title %></h1>
 
   <h2>Total RSVPS: <%= @event.rsvps.count %></h2>
 
   <h2>Hosted by: <%= @event.user.name %></h2>
-  <%= image_tag @event.user.pic.thumb, class: 'rounded-profile-pic pull-right' %>
+
+  <%= link_to image_tag(@event.user.pic.thumb, {class: 'rounded-profile-pic pull-right'}), user_profile_path(@event.user) %>
   <p><%= @event.date.strftime("%B %d, %Y") %></p>
 
   <p><%= @event.time.strftime("%I:%M %P") %></p>
@@ -16,7 +17,7 @@
   <h3> <%= button_to "RSVP", rsvps_path(event_id: @event.id), method: :post, class: "btn btn-primary" %></h3>
 
 
-  <h6><%= link_to "Back to Event's Calendar", rsvps_path, method: :get %></h6>
+  <h6><%= link_to "Back to Event's Calendar", events_path, method: :get %></h6>
 </div>
 
 </div>
